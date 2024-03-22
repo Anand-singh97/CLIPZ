@@ -1,1 +1,12 @@
-<p>tabs-container works!</p>
+<ul class="flex flex-wrap mb-4">
+  <li *ngFor="let tab of tabs" class="flex-auto text-center">
+    <a
+      [ngClass]="{'bg-indigo-400 hover:text-white' : tab.active, 'hover:text-purple-400':!tab.active}"
+      (click)="selectTab(tab, $event)"
+       class= "block rounded py-3 px-4 transition"
+       href="#">{{tab.tabTitle}}
+    </a>
+  </li>
+</ul>
+
+<ng-content></ng-content>
